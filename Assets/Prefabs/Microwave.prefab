@@ -90,6 +90,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.065
       objectReference: {fileID: 0}
+    - target: {fileID: -8068073526183931155, guid: 2fd06b776f863cb459328884e953435a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -1950733119399844177, guid: 2fd06b776f863cb459328884e953435a,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -190,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactable: {fileID: 6306832858446952243}
   _doorTransform: {fileID: 9041013123786832474}
-  _rotationSpeed: 10
+  _rotationSpeed: 200
   _maxDoorAngle: 100
 --- !u!114 &6306832858446952243
 MonoBehaviour:
