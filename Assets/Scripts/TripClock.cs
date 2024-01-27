@@ -9,8 +9,8 @@ public class TripClock : MonoBehaviour
     [SerializeField] private float tripTime;
     [Tooltip("Set to true to tick down the remaining time, false otherwise.")]
     [SerializeField] private bool tickingTime;
-    [Tooltip("Gameover menu to trigger when the timer elapsed.")]
-    [SerializeField] private GameObject gameOverMenu;
+    [Tooltip("Success menu to trigger when the timer elapsed.")]
+    [SerializeField] private GameObject successMenu;
 
     private float timeLeft;
 
@@ -34,7 +34,7 @@ public class TripClock : MonoBehaviour
 
     public void TimeElapsed()
     {
-        gameOverMenu.SetActive(true);
+        successMenu.SetActive(true);
     }
 
     public float GetTimeLeft()
