@@ -14,7 +14,10 @@ public class MicrowaveDoor : MonoBehaviour
 
     [SerializeField, Range(0, 180f)] private float _maxDoorAngle = 100f;
 
+    public bool IsClosed { get { return _currentAngle <= 0.5f; } }
     private float _currentAngle = 0f;
+
+    private bool _isLocked = false;
 
     private Vector2 _previousMousePosition;
 
@@ -40,18 +43,21 @@ public class MicrowaveDoor : MonoBehaviour
         _isDraggingDoor = false;
     }
 
+    public void SetLocked(bool locked)
+    {
+        _isLocked = locked;
+    }
+
     void Update()
     {
         Vector2 currentMousePos = Input.mousePosition;
         Vector2 deltaMousePos = currentMousePos - _previousMousePosition;
 
-        if (_isDraggingDoor)
+        if (_isDraggingDoor && !_isLocked)
         {
             float angleChange = _rotationSpeed * (-deltaMousePos.x / Screen.width);
             _currentAngle += angleChange;
             _currentAngle = Mathf.Clamp(_currentAngle, 0, _maxDoorAngle);
-
-            Debug.Log(_currentAngle);
             _doorTransform.localRotation = Quaternion.Euler(0, _currentAngle, 0);
         }
 
