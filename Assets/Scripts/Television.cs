@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class Television : MonoBehaviour, IModifyInsanity
 {
     private float _currentInsanityModifier = 0f;
+
+    [SerializeField] private List<VideoClip> _goodChannels = new List<VideoClip>();
+    [SerializeField] private List<VideoClip> _badChannels = new List<VideoClip>();
+
 
     void Start()
     {
