@@ -11,11 +11,16 @@ public enum EChannelType
 public class Television : MonoBehaviour, IModifyInsanity
 {
     private float _currentInsanityModifier = 0f;
+    private EChannelType _currentChannelType;
+    private bool _isOn = false;
 
     [SerializeField] private VideoPlayer _vidPlayer;
 
     [SerializeField] private List<VideoClip> _goodChannels = new List<VideoClip>();
     [SerializeField] private List<VideoClip> _badChannels = new List<VideoClip>();
+    [SerializeField] private List<AudioClip> _tripFriendPositiveAudioClips = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> _tripFriendNegativeAudioClips = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> _tripFriendOffAudioClips = new List<AudioClip>();
 
     [Space(5)]
     [SerializeField, Range(-1f, 0f)] private float _goodChannelInsanityModifier = -0.5f;
@@ -41,7 +46,7 @@ public class Television : MonoBehaviour, IModifyInsanity
 
         if (Input.GetKeyDown(KeyCode.O))
         {
-            ToggleTv(!_vidPlayer.isPlaying);
+            ToggleTv(!_isOn);
         }
     }
 
@@ -67,11 +72,13 @@ public class Television : MonoBehaviour, IModifyInsanity
                 break;
         }
 
+        _currentChannelType = type;
         _vidPlayer.clip = newClip;
     }
 
     public void ToggleTv(bool on)
     {
+        _isOn = on;
         if (on)
         {
             SwitchToChannel(Random.Range(0, 2) == 0 ? EChannelType.Good : EChannelType.Bad);
@@ -91,8 +98,48 @@ public class Television : MonoBehaviour, IModifyInsanity
         return _goodChannels[Random.Range(0, _goodChannels.Count)];
     }
 
+    public AudioClip GetRandomGoodVoiceClip()
+    {
+        return _tripFriendPositiveAudioClips[Random.Range(0, _tripFriendPositiveAudioClips.Count)];
+    }
+
     public VideoClip GetRandomBadChannel()
     {
         return _badChannels[Random.Range(0, _badChannels.Count)];
+    }
+
+    public AudioClip GetRandomBadVoiceClip()
+    {
+        return _tripFriendNegativeAudioClips[Random.Range(0, _tripFriendNegativeAudioClips.Count)];
+    }
+
+    public AudioClip GetRandomOffVoiceClip()
+    {
+        return _tripFriendOffAudioClips[Random.Range(0, _tripFriendOffAudioClips.Count)];
+    }
+
+    public AudioClip GetAudioClip()
+    {
+        AudioClip audioclip = null;
+        if (_isOn)
+        {
+            switch (_currentChannelType)
+            {
+                case EChannelType.Good:
+                    audioclip = GetRandomGoodVoiceClip();
+                    _currentInsanityModifier = _goodChannelInsanityModifier;
+                    break;
+                case EChannelType.Bad:
+                    audioclip = GetRandomBadVoiceClip();
+                    _currentInsanityModifier = _badChannelInsanityModifier;
+                    break;
+                default:
+                    break;
+            }
+        } else
+        {
+            audioclip = GetRandomOffVoiceClip();
+        }
+        return audioclip;
     }
 }

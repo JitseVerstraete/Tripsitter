@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public interface IModifyInsanity
 {
     public abstract float GetInsanityModifier();
+    public abstract AudioClip GetAudioClip();
 }
 
 
