@@ -564,12 +564,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2650, y: 1440}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -732,6 +732,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 5886613992724356913, guid: 439558d5f7e9f6143b349470af0a2b2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -750,22 +755,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 1424184569361521063, guid: 91fb2b1a407cd464b8f68d2a4865171d,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 1424184569361521063, guid: 91fb2b1a407cd464b8f68d2a4865171d,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 282.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5243523625168599978, guid: 91fb2b1a407cd464b8f68d2a4865171d,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e73289561dc39c74dbc79241a1a4bacc,
-        type: 3}
     - target: {fileID: 8222175613492056881, guid: 91fb2b1a407cd464b8f68d2a4865171d,
         type: 3}
       propertyPath: m_Pivot.x
