@@ -44,9 +44,6 @@ public class TripFriend : MonoBehaviour
         _currentInsanity += insanityChange;
         _currentInsanity = Mathf.Max(0, _currentInsanity);
 
-        Debug.Log($"insanity change = {insanityChange}");
-        Debug.Log($"number of modifiers= {_insanityModifiers.Count}");
-
 
         UpdateSliderValue();
 

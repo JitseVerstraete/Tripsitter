@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2262319057508399709}
+  - component: {fileID: 4544562888670490634}
   - component: {fileID: 6636732830004740243}
   - component: {fileID: 2644247800927119108}
   - component: {fileID: 8575295686652172309}
-  - component: {fileID: 4544562888670490634}
   - component: {fileID: 3213488352631773809}
   m_Layer: 0
   m_Name: Tv
@@ -37,6 +37,26 @@ Transform:
   - {fileID: 5025712803435768471}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4544562888670490634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748495944734674678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429625385cfd31b4b8123ddad3b4ab4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vidPlayer: {fileID: 3213488352631773809}
+  _blackTexture: {fileID: 0}
+  _goodChannels:
+  - {fileID: 32900000, guid: 7a18b55ba74ef6649be47936dba4ddf5, type: 3}
+  _badChannels:
+  - {fileID: 32900000, guid: 1acea5d10ac928148afba7b00829b59b, type: 3}
+  _goodChannelInsanityModifier: -0.5
+  _badChannelInsanityModifier: 0.75
 --- !u!33 &6636732830004740243
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -108,18 +128,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4544562888670490634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748495944734674678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429625385cfd31b4b8123ddad3b4ab4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!328 &3213488352631773809
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -128,7 +136,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748495944734674678}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 7a18b55ba74ef6649be47936dba4ddf5, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
