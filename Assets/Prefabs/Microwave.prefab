@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5276263200874110982}
+  - component: {fileID: 4364128237261976625}
   m_Layer: 0
   m_Name: Microwave
   m_TagString: Untagged
@@ -32,6 +33,28 @@ Transform:
   - {fileID: 2170456181131000606}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &4364128237261976625
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454894619015674388}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &1843585337761225973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,7 +126,39 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2504998880526022912}
+    - targetCorrespondingSourceObject: {fileID: -8068073526183931155, guid: 2fd06b776f863cb459328884e953435a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2088979659991955473}
   m_SourcePrefab: {fileID: 100100000, guid: 2fd06b776f863cb459328884e953435a, type: 3}
+--- !u!1 &692932873873952280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8068073526183931155, guid: 2fd06b776f863cb459328884e953435a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1843585337761225973}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2088979659991955473
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692932873873952280}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2619086233303812490, guid: 2fd06b776f863cb459328884e953435a, type: 3}
 --- !u!1 &1537085134483579300 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2fd06b776f863cb459328884e953435a,

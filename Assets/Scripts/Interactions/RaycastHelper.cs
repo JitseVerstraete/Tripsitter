@@ -14,11 +14,6 @@ public class RaycastHelper : MonoBehaviour
     public Interactable InteractableHit { get { return _hitInteractable; } }
     private Interactable _hitInteractable;
 
-    [SerializeField] private LayerMask _terrainMask;
-    [SerializeField] private LayerMask _interactableMask;
-
-
-
     void Start()
     {
         if (_instance == null)
@@ -31,7 +26,7 @@ public class RaycastHelper : MonoBehaviour
 
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
         int interactableMask = LayerMask.GetMask("Interactable");
         Physics.Raycast(ray, out _hitInfo, float.MaxValue, ~interactableMask);
 
