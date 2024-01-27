@@ -20,6 +20,9 @@ public class TripFriend : MonoBehaviour
 
     private HashSet<IModifyInsanity> _insanityModifiers = new HashSet<IModifyInsanity>();
 
+    [Tooltip("Gameover menu to trigger when the timer elapsed.")]
+    [SerializeField] private GameObject gameOverMenu;
+
     private void Awake()
     {
         if (_instance == null)
@@ -46,7 +49,16 @@ public class TripFriend : MonoBehaviour
 
 
         UpdateSliderValue();
+        if(_currentInsanity >= _failureInsanityTreshold)
+        {
+            GameOver();
+        }
 
+    }
+
+    private void GameOver()
+    {
+        gameOverMenu.SetActive(true);
     }
 
     private void UpdateSliderValue()

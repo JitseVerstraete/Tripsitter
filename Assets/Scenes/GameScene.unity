@@ -131,25 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1494510597}
     m_Modifications:
-    - target: {fileID: 19843207479734056, guid: 91fb2b1a407cd464b8f68d2a4865171d,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19843207479734056, guid: 91fb2b1a407cd464b8f68d2a4865171d,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 472633168174291222, guid: 91fb2b1a407cd464b8f68d2a4865171d,
         type: 3}
       propertyPath: m_Name
       value: StartMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 472633168174291222, guid: 91fb2b1a407cd464b8f68d2a4865171d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8222175613492056881, guid: 91fb2b1a407cd464b8f68d2a4865171d,
         type: 3}
@@ -374,11 +359,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameOverMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 5886613992724356913, guid: 439558d5f7e9f6143b349470af0a2b2a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1184,9 +1164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1441fc790d1e57498d21f7c70905e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tripTime: 10
+  tripTime: 120
   tickingTime: 1
-  gameOverMenu: {fileID: 0}
+  gameOverMenu: {fileID: 1767378770}
 --- !u!4 &1674282725
 Transform:
   m_ObjectHideFlags: 0
@@ -1202,6 +1182,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1767378770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5886613992724356913, guid: 439558d5f7e9f6143b349470af0a2b2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 266725622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1779065502 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8378589042462900155, guid: 6276e56c1fc10b0458c2363abf60a66c,
@@ -1278,6 +1264,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4317033406050117294, guid: 3fd6e10172bd1984d90c30e1619c1632,
+        type: 3}
+      propertyPath: gameOverMenu
+      value: 
+      objectReference: {fileID: 1767378770}
     - target: {fileID: 4317033406050117294, guid: 3fd6e10172bd1984d90c30e1619c1632,
         type: 3}
       propertyPath: _insanitySlider
