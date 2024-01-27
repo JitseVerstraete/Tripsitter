@@ -14,6 +14,15 @@ public class Window : MonoBehaviour, IModifyInsanity
     private float _deltaInsanity = 0.01f;
     private bool _shouldIncreaseModifier = true;
 
+    void Start()
+    {
+        TripFriend.Instance.RegisterInsanityModifier(this);
+    }
+
+    private void OnDestroy()
+    {
+        TripFriend.Instance.UnregisterInsanityModifier(this);
+    }
 
     private void Update()
     {
@@ -21,7 +30,22 @@ public class Window : MonoBehaviour, IModifyInsanity
         {
             StartCoroutine(IncreaseMultiplier());
         }
-        Debug.Log("___" + _currentInsanityModifier);
+    }
+    public void ResetInsanityModifier()
+    {
+        _currentInsanityModifier = 0f;
+    }
+
+    public void OpenWindow()
+    {
+        //TODO: move parts to open the window
+        _isOpen = true;
+    }
+
+    public void CloseWindow()
+    {
+        //TODO: move parts to close the window
+        _isOpen = false;
     }
 
     public AudioClip GetAudioClip()
@@ -35,11 +59,6 @@ public class Window : MonoBehaviour, IModifyInsanity
     public float GetInsanityModifier()
     {
         return _currentInsanityModifier;
-    }
-
-    public void ResetInsanityModifier()
-    {
-        _currentInsanityModifier = 0f;
     }
 
     public bool GetIsOpen()
