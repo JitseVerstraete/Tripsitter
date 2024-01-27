@@ -15,6 +15,10 @@ public class Interactable : MonoBehaviour
     private void Awake()
     {
         _col = GetComponent<Collider>();
+        if (gameObject.layer != LayerMask.NameToLayer("Interactable"))
+        {
+            Debug.LogError("set the interactable onbject on the interactable layer!");
+        }
     }
 
     private void Update()
@@ -24,7 +28,6 @@ public class Interactable : MonoBehaviour
             if (RaycastHelper.Instance.InteractableHit == this)
             {
                 OnInteractableClicked?.Invoke();
-                Debug.Log("clicked!");
                 _clickDown = true;
             }
         }
@@ -34,7 +37,6 @@ public class Interactable : MonoBehaviour
             if (_clickDown)
             {
                 OnInteractableReleased?.Invoke();
-                Debug.Log("released!");
                 _clickDown = false;
             }
         }

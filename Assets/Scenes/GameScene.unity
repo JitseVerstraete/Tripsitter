@@ -1213,6 +1213,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 692932873873952280, guid: d51ae1227e6b2854d802daf210e70aa3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797411913620062685, guid: d51ae1227e6b2854d802daf210e70aa3,
+        type: 3}
+      propertyPath: _rotationSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 5276263200874110982, guid: d51ae1227e6b2854d802daf210e70aa3,
         type: 3}
       propertyPath: m_LocalPosition.x

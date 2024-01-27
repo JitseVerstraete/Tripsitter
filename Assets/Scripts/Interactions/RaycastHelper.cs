@@ -30,8 +30,6 @@ public class RaycastHelper : MonoBehaviour
         int interactableMask = LayerMask.GetMask("Interactable");
         Physics.Raycast(ray, out _hitInfo, float.MaxValue, ~interactableMask);
 
-        Debug.Log(HitInfo.point);
-
         RaycastHit interactableHit;
         Physics.Raycast(ray, out interactableHit, float.MaxValue, interactableMask);
         if (interactableHit.collider != null)
