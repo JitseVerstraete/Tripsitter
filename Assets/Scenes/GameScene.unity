@@ -524,7 +524,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8701325681123162535, guid: 52507e087eae807479b4a4f2e876ac11,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1504262505}
   m_SourcePrefab: {fileID: 100100000, guid: 52507e087eae807479b4a4f2e876ac11, type: 3}
 --- !u!1 &963194225
 GameObject:
@@ -914,6 +918,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1504262504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8701325681123162535, guid: 52507e087eae807479b4a4f2e876ac11,
+    type: 3}
+  m_PrefabInstance: {fileID: 757388509}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1504262505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504262504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4948a0b6e8cb44b4cbb8ac23efe7d1de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseTimerInSeconds: 0.5
+  _tripFriendOpenAudioClips: []
+  _tripFriendClosedAudioClips: []
 --- !u!224 &1519730385 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8222175613492056881, guid: 91fb2b1a407cd464b8f68d2a4865171d,
