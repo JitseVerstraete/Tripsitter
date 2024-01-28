@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.Serialization;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Microwave : MonoBehaviour

@@ -57,6 +57,12 @@ public class TripFriend : MonoBehaviour
         _animator.SetFloat("InsanityPercent", 0f);
     }
 
+    public void ChangeInsanity(float diff)
+    {
+        _currentInsanity += diff;
+        _currentInsanity = Mathf.Clamp(_currentInsanity, 0, _failureInsanityTreshold);
+    }
+
     private void Update()
     {
         float insanityModTotal = 0;

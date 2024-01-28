@@ -226,6 +226,8 @@ public class Television : MonoBehaviour, IModifyInsanity
         _goodChannelIndex = Random.Range(0, _goodChannels.Count);
         _badChannelIndex = Random.Range(0, _badChannels.Count);
 
+        Debug.Log($"generated new channels {_goodChannelIndex}, {_badChannelAngle}");
+
         while (_goodChannelAngle > 360f)
         {
             _goodChannelAngle -= 360f;

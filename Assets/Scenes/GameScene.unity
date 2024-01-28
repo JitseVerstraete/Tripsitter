@@ -376,6 +376,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4957138353304162824, guid: 439558d5f7e9f6143b349470af0a2b2a,
+        type: 3}
+      propertyPath: tv
+      value: 
+      objectReference: {fileID: 897780562}
     - target: {fileID: 5886613992724356913, guid: 439558d5f7e9f6143b349470af0a2b2a,
         type: 3}
       propertyPath: m_Name
@@ -660,6 +665,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4e063ef50b55e7c4d9537a1e3ebf3b33,
     type: 3}
   m_PrefabInstance: {fileID: 866846454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &897780562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5052022751637576560, guid: 3fd6e10172bd1984d90c30e1619c1632,
+    type: 3}
+  m_PrefabInstance: {fileID: 1945678574}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
@@ -1426,7 +1437,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ee265eacfcd7ea74791573dc1f65bb9e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.038
+  m_Volume: 0.032
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1537,7 +1548,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7d05a2542773a194a8661be6221e3243, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.182
+  m_Volume: 0.191
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2371,6 +2382,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544562888670490634, guid: d6b936e5997a65044990f2e426c8bd26,
+        type: 3}
+      propertyPath: _angleMargin
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

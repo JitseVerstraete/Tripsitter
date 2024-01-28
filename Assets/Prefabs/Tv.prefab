@@ -53,7 +53,7 @@ MonoBehaviour:
   _angleMargin: 30
   _timeBetweenSwitchEvents: 15
   _goodChannels:
-  - {fileID: 32900000, guid: 7a18b55ba74ef6649be47936dba4ddf5, type: 3}
+  - {fileID: 32900000, guid: 858f24c95e327e4408daf62a846d7fb8, type: 3}
   - {fileID: 32900000, guid: d562a7c7c7f8c5740b08d88da1e7fd19, type: 3}
   _badChannels:
   - {fileID: 32900000, guid: 1acea5d10ac928148afba7b00829b59b, type: 3}
@@ -115,7 +115,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.083
+  m_Volume: 0.191
   m_Pitch: 1
   Loop: 0
   Mute: 0

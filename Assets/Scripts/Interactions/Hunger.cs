@@ -36,6 +36,7 @@ public class Hunger : MonoBehaviour, IModifyInsanity
             Destroy(other.attachedRigidbody.gameObject);
             _timer = 0f;
             _currentHungerInsanityMod = 0f;
+            TripFriend.Instance.ChangeInsanity(-1f);
         }
     }
 
