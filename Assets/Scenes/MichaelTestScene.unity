@@ -234,11 +234,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuccessMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 4991870821414696893, guid: 67df7b7dabc1f18409697004941729d3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7829777141714985213, guid: 67df7b7dabc1f18409697004941729d3,
         type: 3}
       propertyPath: m_Pivot.x
@@ -838,11 +833,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 5886613992724356913, guid: 439558d5f7e9f6143b349470af0a2b2a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -960,11 +950,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8477284150681001567, guid: 91fb2b1a407cd464b8f68d2a4865171d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
