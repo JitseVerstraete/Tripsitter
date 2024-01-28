@@ -49,7 +49,7 @@ MonoBehaviour:
   _tripFriendOpenAudioClips:
   - {fileID: 8300000, guid: ff700043d7c7c354aa52fd25f3ca42ae, type: 3}
   _tripFriendClosedAudioClips:
-  - {fileID: 8300000, guid: ff700043d7c7c354aa52fd25f3ca42ae, type: 3}
+  - {fileID: 8300000, guid: 84d36a76c85b17f44b2841ff6576cc7e, type: 3}
   _shutterTransform: {fileID: 9035419544526195014}
   _windowGracePeriod: 5
   _openPos: {x: 0.76766396, y: 15.72, z: -1.7795634}

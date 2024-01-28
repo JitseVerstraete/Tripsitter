@@ -116,14 +116,17 @@ MonoBehaviour:
   _goodFlavorClips:
   - {fileID: 8300000, guid: eda429d288c91604984af5a282d4c37e, type: 3}
   - {fileID: 8300000, guid: 8c554e4bcd4d6d448a8bbd90a9279277, type: 3}
-  - {fileID: 8300000, guid: 6d04f563422f0854780627948f8c0fd0, type: 3}
-  - {fileID: 8300000, guid: 4e0a7976444289d4ea61ffd631cc2040, type: 3}
+  - {fileID: 8300000, guid: bc9e9ce32aefc3f48b5d021ed045293f, type: 3}
+  - {fileID: 8300000, guid: 86d6ecce787f2a6459966dbe3920cce5, type: 3}
   - {fileID: 8300000, guid: c06c3b4285d858b49bc65182ddb88ada, type: 3}
   - {fileID: 8300000, guid: 09daec041bbb4a244ad2780b3c4a5b76, type: 3}
+  - {fileID: 8300000, guid: e05ca8c8b3cb481489881f912f92742b, type: 3}
   _BadFlavorClips:
   - {fileID: 8300000, guid: 1ef04fabfad38134fa84c00bb3801282, type: 3}
-  - {fileID: 8300000, guid: e05ca8c8b3cb481489881f912f92742b, type: 3}
   - {fileID: 8300000, guid: 6f82a6958a49e6449923a5e13c41b4da, type: 3}
+  - {fileID: 8300000, guid: 2a8451de06eb0ae48b63a13b2134c579, type: 3}
+  - {fileID: 8300000, guid: df2e2b807517ddc44b50d829fa64b4d5, type: 3}
+  - {fileID: 8300000, guid: cba1cf9548d05e74abe7b2f41b7a0ac6, type: 3}
   _pizzaIcon: {fileID: 0}
   _windowIcon: {fileID: 0}
   _tvIcon: {fileID: 0}
