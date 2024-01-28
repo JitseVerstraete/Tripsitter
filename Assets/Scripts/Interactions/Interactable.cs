@@ -24,7 +24,6 @@ public class Interactable : MonoBehaviour
         {
             Debug.LogError("set the interactable onbject on the interactable layer!");
         }
-        _meshRen.sharedMaterial = _meshRen.material;
     }
 
     private void Update()
@@ -59,7 +58,7 @@ public class Interactable : MonoBehaviour
         {
             Debug.LogError($"{gameObject} meshren no assign");
         }
-        Material mymat = _meshRen.sharedMaterial;
+        Material mymat = _meshRen.material;
         if (hover)
         {
             Color col = new Color(1, 1, 1);
