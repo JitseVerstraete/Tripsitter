@@ -1162,7 +1162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1494510594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,41 +1263,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 120579302357739386, guid: 51be0d61c1e777b4aa3d76e1582183e6,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 4556162199892025090, guid: 51be0d61c1e777b4aa3d76e1582183e6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.369
-      objectReference: {fileID: 0}
-    - target: {fileID: 4556162199892025090, guid: 51be0d61c1e777b4aa3d76e1582183e6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4556162199892025090, guid: 51be0d61c1e777b4aa3d76e1582183e6,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4556162199892025090, guid: 51be0d61c1e777b4aa3d76e1582183e6,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4556162199892025090, guid: 51be0d61c1e777b4aa3d76e1582183e6,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4556162199892025090, guid: 51be0d61c1e777b4aa3d76e1582183e6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
     - target: {fileID: 7079437596114341627, guid: 51be0d61c1e777b4aa3d76e1582183e6,
         type: 3}
       propertyPath: m_Name
@@ -1388,7 +1353,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ee265eacfcd7ea74791573dc1f65bb9e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.32
+  m_Volume: 0.038
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1499,7 +1464,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7d05a2542773a194a8661be6221e3243, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.119
+  m_Volume: 0.182
   m_Pitch: 1
   Loop: 0
   Mute: 0

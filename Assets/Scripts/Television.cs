@@ -18,6 +18,8 @@ public class Television : MonoBehaviour, IModifyInsanity
 
     private float _goodChannelAngle = 0f;
     private float _badChannelAngle = 0f;
+    private int _goodChannelIndex = 0;
+    private int _badChannelIndex = 0;
 
 
     [SerializeField] private VideoPlayer _vidPlayer;
@@ -120,6 +122,7 @@ public class Television : MonoBehaviour, IModifyInsanity
 
         _currentChannelType = type;
         _vidPlayer.clip = newClip;
+        _vidPlayer.time = UnityEngine.Random.Range(0, (float)newClip.length / 2f);
     }
 
     public void SetTvOn(bool on)
@@ -145,7 +148,7 @@ public class Television : MonoBehaviour, IModifyInsanity
 
     public VideoClip GetRandomGoodChannel()
     {
-        return _goodChannels[Random.Range(0, _goodChannels.Count)];
+        return _goodChannels[_goodChannelIndex];
     }
 
     public AudioClip GetRandomGoodVoiceClip()
@@ -159,7 +162,7 @@ public class Television : MonoBehaviour, IModifyInsanity
 
     public VideoClip GetRandomBadChannel()
     {
-        return _badChannels[Random.Range(0, _badChannels.Count)];
+        return _badChannels[_badChannelIndex];
     }
 
     public AudioClip GetRandomBadVoiceClip()
@@ -219,6 +222,10 @@ public class Television : MonoBehaviour, IModifyInsanity
     {
         _badChannelAngle = _channelRotation.CurrentAngle;
         _goodChannelAngle = _channelRotation.CurrentAngle + Random.Range(_angleMargin * 2f, 360f - (_angleMargin * 4f));
+
+        _goodChannelIndex = Random.Range(0, _goodChannels.Count);
+        _badChannelIndex = Random.Range(0, _badChannels.Count);
+
         while (_goodChannelAngle > 360f)
         {
             _goodChannelAngle -= 360f;
