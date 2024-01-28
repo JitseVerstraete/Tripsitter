@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &26730227 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7602492591134580678, guid: 8298e06b08498ee4195501099a1c9cf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1880593307}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &287451920 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1236381412176053400, guid: 439558d5f7e9f6143b349470af0a2b2a,
@@ -963,6 +969,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4957138353304162824, guid: 439558d5f7e9f6143b349470af0a2b2a,
         type: 3}
+      propertyPath: tv
+      value: 
+      objectReference: {fileID: 26730227}
+    - target: {fileID: 4957138353304162824, guid: 439558d5f7e9f6143b349470af0a2b2a,
+        type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1050242341}
@@ -970,6 +981,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameOverMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886613992724356913, guid: 439558d5f7e9f6143b349470af0a2b2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
