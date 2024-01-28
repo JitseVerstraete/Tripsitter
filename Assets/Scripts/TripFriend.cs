@@ -24,7 +24,7 @@ public class TripFriend : MonoBehaviour
     public static TripFriend Instance { get { return _instance; } }
     private static TripFriend _instance = null;
 
-    [SerializeField] private Slider _insanitySlider = null;
+    [SerializeField] private Image _insanitySlider = null;
     [SerializeField] private Animator _animator = null;
     private float _currentInsanity;
     [SerializeField] private float _failureInsanityTreshold = 10f;
@@ -34,6 +34,10 @@ public class TripFriend : MonoBehaviour
     [SerializeField] private List<AudioClip> _goodFlavorClips = new List<AudioClip>();
     [SerializeField] private List<AudioClip> _BadFlavorClips = new List<AudioClip>();
     private float _voiceLineTimer = 0f;
+
+    [SerializeField] private GameObject _pizzaIcon = null;
+    [SerializeField] private GameObject _windowIcon = null;
+    [SerializeField] private GameObject _tvIcon = null;
 
     private HashSet<IModifyInsanity> _insanityModifiers = new HashSet<IModifyInsanity>();
 
@@ -58,6 +62,18 @@ public class TripFriend : MonoBehaviour
         float insanityModTotal = 0;
         foreach (IModifyInsanity insanityMod in _insanityModifiers)
         {
+            switch (insanityMod.GetModifierType())
+            {
+                case EInsanityModifierType.TV:
+                    _tvIcon.SetActive(insanityMod.GetInsanityModifier() > 0.05f);
+                    break;
+                case EInsanityModifierType.Window:
+                    _windowIcon.SetActive(insanityMod.GetInsanityModifier() > 0.05f);
+                    break;
+                case EInsanityModifierType.Hunger:
+                    _pizzaIcon.SetActive(insanityMod.GetInsanityModifier() > 0.05f);
+                    break;
+            }
             insanityModTotal += insanityMod.GetInsanityModifier();
         }
 
@@ -143,9 +159,7 @@ public class TripFriend : MonoBehaviour
             return;
         }
 
-
-        _insanitySlider.value = _currentInsanity / _failureInsanityTreshold;
-
+        _insanitySlider.fillAmount = _currentInsanity / _failureInsanityTreshold;
     }
 
     public void RegisterInsanityModifier(IModifyInsanity modifier)

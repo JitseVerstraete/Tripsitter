@@ -85,7 +85,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.41009682, y: 0.41009682, z: 0.41009682}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3876946462449164540}
@@ -124,6 +124,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1ef04fabfad38134fa84c00bb3801282, type: 3}
   - {fileID: 8300000, guid: e05ca8c8b3cb481489881f912f92742b, type: 3}
   - {fileID: 8300000, guid: 6f82a6958a49e6449923a5e13c41b4da, type: 3}
+  _pizzaIcon: {fileID: 0}
+  _windowIcon: {fileID: 0}
+  _tvIcon: {fileID: 0}
   gameOverMenu: {fileID: 0}
 --- !u!114 &2285741924446478501
 MonoBehaviour:

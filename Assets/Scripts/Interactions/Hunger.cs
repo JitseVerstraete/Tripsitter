@@ -12,6 +12,8 @@ public class Hunger : MonoBehaviour, IModifyInsanity
 
     private void Update()
     {
+        TripFriend.Instance.RegisterInsanityModifier(this);
+
         _timer += Time.deltaTime;
 
         if (_timer >= _hungerGraceTime)
@@ -19,6 +21,12 @@ public class Hunger : MonoBehaviour, IModifyInsanity
             _currentHungerInsanityMod += _hungerGrowRatePerSecond * Time.deltaTime;
         }
     }
+
+    private void OnDestroy()
+    {
+        TripFriend.Instance.UnregisterInsanityModifier(this);
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
