@@ -17,13 +17,18 @@ public class GameOverMenu : MonoBehaviour
     {
         tv.SetActive(false); // turn off tv
 
-        audioSource.PlayOneShot(crashSound);
-        Invoke("PlaySirenSounds", crashSound.length -1); // The -1 is a hack because I dont want to edit the audio file right now
+        audioSource.clip = crashSound;
+        audioSource.time = 0.8f;
+        audioSource.Play();
+        Invoke("PlaySirenSounds", crashSound.length -2f); // The -1 is a hack because I dont want to edit the audio file right now
     }
 
     private void PlaySirenSounds()
     {
-        audioSource.PlayOneShot(sirens);
+        Debug.Log("Sirens");
+        //audioSource.PlayOneShot(sirens);
+        audioSource.clip = sirens;
+        audioSource.Play();
     }
 
     private void OnDestroy()
