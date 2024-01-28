@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Android;
 
 [RequireComponent(typeof(Collider))]
 public class Interactable : MonoBehaviour
@@ -6,6 +7,8 @@ public class Interactable : MonoBehaviour
     public delegate void InteractableEvent();
     public InteractableEvent OnInteractableClicked;
     public InteractableEvent OnInteractableReleased;
+
+    [SerializeField] private MeshRenderer _meshRen;
 
     public Collider Collider { get { return _col; } }
     private Collider _col;
@@ -39,6 +42,24 @@ public class Interactable : MonoBehaviour
                 OnInteractableReleased?.Invoke();
                 _clickDown = false;
             }
+        }
+    }
+
+    public void SetHover(bool hover)
+    {
+        if (_meshRen == null)
+        {
+            Debug.LogError($"{gameObject} meshren no assign");
+        }
+        Material mymat = _meshRen.material;
+        if (hover)
+        {
+            mymat.EnableKeyword("_EMISSION");
+            mymat.SetColor("_EmissionColor", new Color(1f, 1f, 1f, 0.2f));
+        }
+        else
+        {
+            mymat.DisableKeyword("_EMISSION");
         }
     }
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public interface IModifyInsanity
 {
@@ -15,7 +16,7 @@ public class TripFriend : MonoBehaviour
     private static TripFriend _instance = null;
 
     [SerializeField] private Slider _insanitySlider = null;
-
+    [SerializeField] private Animator _animator = null;
     private float _currentInsanity;
     [SerializeField] private float _failureInsanityTreshold = 10f;
 
@@ -34,6 +35,7 @@ public class TripFriend : MonoBehaviour
         {
             Debug.LogError("there are multiple trip friends, fix this!");
         }
+        _animator.SetFloat("InsanityPercent", 0f);
     }
 
     private void Update()
@@ -48,9 +50,10 @@ public class TripFriend : MonoBehaviour
         _currentInsanity += insanityChange;
         _currentInsanity = Mathf.Max(0, _currentInsanity);
 
+        _animator.SetFloat("InsanityPercent", _currentInsanity / _failureInsanityTreshold);
 
         UpdateSliderValue();
-        if(_currentInsanity >= _failureInsanityTreshold)
+        if (_currentInsanity >= _failureInsanityTreshold)
         {
             GameOver();
         }

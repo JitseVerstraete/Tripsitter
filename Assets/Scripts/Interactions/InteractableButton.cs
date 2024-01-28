@@ -6,6 +6,7 @@ public class InteractableButton : MonoBehaviour
     [SerializeField] private Transform _transform;
     [SerializeField] private Interactable _interactable;
     [SerializeField] private UnityEvent _OnPress;
+    [SerializeField] private UnityEvent _OnRelease;
 
     private const float BUTTON_OFFSET = 0.06f;
     private Vector3 _initialPos = Vector3.zero;
@@ -33,5 +34,6 @@ public class InteractableButton : MonoBehaviour
     private void ReleaseButton()
     {
         _transform.localPosition = _initialPos;
+        _OnRelease?.Invoke();
     }
 }

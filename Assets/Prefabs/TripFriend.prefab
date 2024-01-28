@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _insanitySlider: {fileID: 0}
+  _animator: {fileID: 5453471727386966389}
   _failureInsanityTreshold: 10
   gameOverMenu: {fileID: 0}
 --- !u!114 &2285741924446478501
@@ -553,3 +554,9 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!95 &5453471727386966389 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6840047633222023828, guid: b3fb693b2a833784bb44436f2d91f22c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1531827168025904097}
+  m_PrefabAsset: {fileID: 0}

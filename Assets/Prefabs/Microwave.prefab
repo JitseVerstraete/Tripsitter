@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527d7f3019b09f640a4c0f3b939d74bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meshRen: {fileID: 7084623541452267049}
 --- !u!1 &1537085134483579300 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2fd06b776f863cb459328884e953435a,
@@ -493,6 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527d7f3019b09f640a4c0f3b939d74bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meshRen: {fileID: 8050315810649305113}
 --- !u!114 &8852964650274489923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,6 +524,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _OnRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &2170456181131000606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2fd06b776f863cb459328884e953435a,
@@ -568,6 +573,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -29785171406439458, guid: 2fd06b776f863cb459328884e953435a, type: 3}
+--- !u!23 &7084623541452267049 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -305091885687274788, guid: 2fd06b776f863cb459328884e953435a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1843585337761225973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7917303442376270887 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8379600838052608210, guid: 2fd06b776f863cb459328884e953435a,
@@ -596,6 +607,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5716479821048686667, guid: 2fd06b776f863cb459328884e953435a, type: 3}
+--- !u!23 &8050315810649305113 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8515687368287988972, guid: 2fd06b776f863cb459328884e953435a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1843585337761225973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9041013123786832474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1950733119399844177, guid: 2fd06b776f863cb459328884e953435a,

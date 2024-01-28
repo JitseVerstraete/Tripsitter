@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -6,6 +7,7 @@ public enum EChannelType
 {
     Good,
     Bad,
+    Static,
 }
 
 public class Television : MonoBehaviour, IModifyInsanity
@@ -14,10 +16,22 @@ public class Television : MonoBehaviour, IModifyInsanity
     private EChannelType _currentChannelType;
     private bool _isOn = false;
 
+    private float _goodChannelAngle = 0f;
+    private float _badChannelAngle = 0f;
+
+
     [SerializeField] private VideoPlayer _vidPlayer;
+
+    [SerializeField] private RotationButton _channelRotation;
+    [SerializeField] private float _angleMargin = 20f;
+
+    [SerializeField] private float _timeBetweenSwitchEvents = 10f;
+    private float _timer = 0f;
+
 
     [SerializeField] private List<VideoClip> _goodChannels = new List<VideoClip>();
     [SerializeField] private List<VideoClip> _badChannels = new List<VideoClip>();
+    [SerializeField] private VideoClip _staticClip;
     [SerializeField] private List<AudioClip> _tripFriendPositiveAudioClips = new List<AudioClip>();
     [SerializeField] private List<AudioClip> _tripFriendNegativeAudioClips = new List<AudioClip>();
     [SerializeField] private List<AudioClip> _tripFriendOffAudioClips = new List<AudioClip>();
@@ -25,10 +39,14 @@ public class Television : MonoBehaviour, IModifyInsanity
     [Space(5)]
     [SerializeField, Range(-1f, 0f)] private float _goodChannelInsanityModifier = -0.5f;
     [SerializeField, Range(0f, 2f)] private float _badChannelInsanityModifier = 0.75f;
+    [SerializeField, Range(0f, 2f)] private float _staticChannelInanityModifier = 0.15f;
+
 
     void Start()
     {
         TripFriend.Instance.RegisterInsanityModifier(this);
+        GenerateNewChannelAngles();
+        SetTvOn(false);
     }
 
     private void OnDestroy()
@@ -39,14 +57,31 @@ public class Television : MonoBehaviour, IModifyInsanity
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!_isOn || _currentChannelType == EChannelType.Good)
         {
-            SwitchToChannel(Random.Range(0, 2) == 0 ? EChannelType.Good : EChannelType.Bad);
+            _timer += Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.O))
+        if (_timer > _timeBetweenSwitchEvents)
         {
-            ToggleTv(!_isOn);
+            _timer = 0f;
+            TvSwitchEvent();
+        }
+
+        if (_isOn)
+        {
+            if (Mathf.Abs(_channelRotation.CurrentAngle - _badChannelAngle) < _angleMargin)
+            {
+                SwitchToChannel(EChannelType.Bad);
+            }
+            else if (Mathf.Abs(_channelRotation.CurrentAngle - _goodChannelAngle) < _angleMargin)
+            {
+                SwitchToChannel(EChannelType.Good);
+            }
+            else
+            {
+                SwitchToChannel(EChannelType.Static);
+            }
         }
     }
 
@@ -57,6 +92,11 @@ public class Television : MonoBehaviour, IModifyInsanity
 
     public void SwitchToChannel(EChannelType type)
     {
+        if (_currentChannelType == type)
+        {
+            return;
+        }
+
         VideoClip newClip = null;
         switch (type)
         {
@@ -68,6 +108,10 @@ public class Television : MonoBehaviour, IModifyInsanity
                 newClip = GetRandomBadChannel();
                 _currentInsanityModifier = _badChannelInsanityModifier;
                 break;
+            case EChannelType.Static:
+                newClip = _staticClip;
+                _currentInsanityModifier = _staticChannelInanityModifier;
+                break;
             default:
                 break;
         }
@@ -76,21 +120,26 @@ public class Television : MonoBehaviour, IModifyInsanity
         _vidPlayer.clip = newClip;
     }
 
-    public void ToggleTv(bool on)
+    public void SetTvOn(bool on)
     {
         _isOn = on;
         if (on)
         {
-            SwitchToChannel(Random.Range(0, 2) == 0 ? EChannelType.Good : EChannelType.Bad);
+            SwitchToChannel(EChannelType.Bad);
             _vidPlayer.Play();
         }
         else
         {
-            _vidPlayer.clip = null;
             _vidPlayer.Stop();
             _vidPlayer.targetTexture.Release();
             _currentInsanityModifier = 0f;
         }
+    }
+
+    public void ToggleTv()
+    {
+        SetTvOn(!_isOn);
+        Debug.Log($"switch! {_isOn}");
     }
 
     public VideoClip GetRandomGoodChannel()
@@ -136,10 +185,43 @@ public class Television : MonoBehaviour, IModifyInsanity
                 default:
                     break;
             }
-        } else
+        }
+        else
         {
             audioclip = GetRandomOffVoiceClip();
         }
         return audioclip;
+    }
+
+
+    private void TvSwitchEvent()
+    {
+        if (!_isOn)
+        {
+            SetTvOn(true);
+        }
+
+        if (_currentChannelType == EChannelType.Bad)
+        {
+            return;
+        }
+
+        SwitchToChannel(EChannelType.Bad);
+        GenerateNewChannelAngles();
+    }
+
+    private void GenerateNewChannelAngles()
+    {
+        _badChannelAngle = _channelRotation.CurrentAngle;
+        _goodChannelAngle = _channelRotation.CurrentAngle + Random.Range(_angleMargin * 2f, 360f - (_angleMargin * 4f));
+        while (_goodChannelAngle > 360f)
+        {
+            _goodChannelAngle -= 360f;
+        }
+
+        while (_goodChannelAngle < 0f)
+        {
+            _goodChannelAngle += 360f;
+        }
     }
 }

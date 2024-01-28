@@ -19,8 +19,6 @@ public class Hunger : MonoBehaviour, IModifyInsanity
         {
             _currentHungerInsanityMod += _hungerGrowRatePerSecond * Time.deltaTime;
         }
-
-        Debug.Log(_currentHungerInsanityMod);
     }
 
     private void OnTriggerEnter(Collider other)

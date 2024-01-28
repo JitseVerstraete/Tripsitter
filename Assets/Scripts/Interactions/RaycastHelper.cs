@@ -34,10 +34,18 @@ public class RaycastHelper : MonoBehaviour
         Physics.Raycast(ray, out interactableHit, float.MaxValue, interactableMask);
         if (interactableHit.collider != null)
         {
-            _hitInteractable = interactableHit.collider.GetComponent<Interactable>();
+            Interactable newInteractable = interactableHit.collider.GetComponent<Interactable>();
+            if (newInteractable != _hitInteractable)
+            {
+                if (_hitInteractable != null) _hitInteractable.SetHover(false);
+                newInteractable.SetHover(true);
+                _hitInteractable = newInteractable;
+
+            }
         }
         else
         {
+            if (_hitInteractable != null) _hitInteractable.SetHover(false);
             _hitInteractable = null;
         }
     }
