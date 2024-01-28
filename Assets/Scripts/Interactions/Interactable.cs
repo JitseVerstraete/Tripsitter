@@ -9,6 +9,8 @@ public class Interactable : MonoBehaviour
     public InteractableEvent OnInteractableReleased;
 
     [SerializeField] private MeshRenderer _meshRen;
+    [SerializeField] private bool _hoverHighlightEnabled = true;
+    private float _intensity = -3.5f;
 
     public Collider Collider { get { return _col; } }
     private Collider _col;
@@ -22,6 +24,7 @@ public class Interactable : MonoBehaviour
         {
             Debug.LogError("set the interactable onbject on the interactable layer!");
         }
+        _meshRen.sharedMaterial = _meshRen.material;
     }
 
     private void Update()
@@ -47,20 +50,32 @@ public class Interactable : MonoBehaviour
 
     public void SetHover(bool hover)
     {
+        if (!_hoverHighlightEnabled)
+        {
+            return;
+        }
+
         if (_meshRen == null)
         {
             Debug.LogError($"{gameObject} meshren no assign");
         }
-        Material mymat = _meshRen.material;
+        Material mymat = _meshRen.sharedMaterial;
         if (hover)
         {
-            mymat.EnableKeyword("_EMISSION");
-            mymat.SetColor("_EmissionColor", new Color(1f, 1f, 1f, 0.2f));
+            Color col = new Color(1, 1, 1);
+            col *= Mathf.Pow(2f, _intensity);
+            mymat.SetColor("_EmissionColor", col);
         }
         else
         {
-            mymat.DisableKeyword("_EMISSION");
+            mymat.SetColor("_EmissionColor", new Color(0f, 0f, 0f));
         }
+    }
+
+    public void ClickInteractable()
+    {
+        _clickDown = true;
+        OnInteractableClicked?.Invoke();
     }
 
 }

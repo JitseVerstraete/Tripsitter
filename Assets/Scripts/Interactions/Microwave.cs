@@ -12,6 +12,7 @@ public class Microwave : MonoBehaviour
 
     [SerializeField] private MicrowaveDoor _door;
     [SerializeField] private Transform _timerTransform;
+    private float _startRot = 0;
 
     [SerializeField] private float _timeToCook;
     private float _timer = 0;
@@ -22,6 +23,7 @@ public class Microwave : MonoBehaviour
     private void Awake()
     {
         _timer = 0;
+        _startRot = _timerTransform.localRotation.eulerAngles.z;
     }
 
     public void TurnOn()
@@ -42,7 +44,7 @@ public class Microwave : MonoBehaviour
         if (_isRunning)
         {
             _timer += Time.deltaTime;
-            _timerTransform.localRotation = Quaternion.Euler(0, 0, 360f * (_timer / _timeToCook));
+            _timerTransform.localRotation = Quaternion.Euler(0, 0, _startRot + 360f * (_timer / _timeToCook));
         }
 
         if (_timer >= _timeToCook)
