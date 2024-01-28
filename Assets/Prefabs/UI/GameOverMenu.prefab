@@ -603,6 +603,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed33a116b6ac0f1499479a30aaee4797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  sirens: {fileID: 8300000, guid: a0a1ef1b5fb62a8458b270327e9a1ed9, type: 3}
+  crashSound: {fileID: 8300000, guid: f0c72cf9e4e90b84eb722a1af6fd3c6e, type: 3}
 --- !u!1 &8957155298162497700
 GameObject:
   m_ObjectHideFlags: 0
