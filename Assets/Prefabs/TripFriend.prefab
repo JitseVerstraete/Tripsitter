@@ -510,6 +510,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6957193383114455248, guid: b3fb693b2a833784bb44436f2d91f22c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5495902117074765545, guid: c8c1221dad63eb64b90c40d7512fb39f,
+        type: 3}
+    - target: {fileID: 6957193383114455248, guid: b3fb693b2a833784bb44436f2d91f22c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4ba54714aa572224fa6ed03f00bb1d8a, type: 2}
     - target: {fileID: 8500884558570438769, guid: b3fb693b2a833784bb44436f2d91f22c,
         type: 3}
       propertyPath: m_IsActive
