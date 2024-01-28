@@ -12,6 +12,9 @@ public class TripClock : MonoBehaviour
     [Tooltip("Success menu to trigger when the timer elapsed.")]
     [SerializeField] private GameObject successMenu;
 
+    [SerializeField] private Transform clockHand;
+
+
     private float timeLeft;
 
     void Start()
@@ -24,6 +27,7 @@ public class TripClock : MonoBehaviour
         if (tickingTime)
         {
             timeLeft -= Time.deltaTime;
+            UpdateClockHand();
             if (timeLeft <= 0)
             {
                 tickingTime = false;
@@ -41,5 +45,11 @@ public class TripClock : MonoBehaviour
     public float GetTimeLeft()
     {
         return timeLeft;
+    }
+
+    private void UpdateClockHand()
+    {
+        float degrees = Mathf.Lerp(0, 360, 1 - (timeLeft/tripTime));
+        clockHand.localRotation = Quaternion.Euler(0, 0, degrees);
     }
 }
