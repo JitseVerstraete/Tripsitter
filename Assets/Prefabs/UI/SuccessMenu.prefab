@@ -335,7 +335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0881d08677496c243958dab3c3dd1172, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b9a46836ce80e34d8eac17afa0ea6f4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -453,6 +453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed33a116b6ac0f1499479a30aaee4797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  sirens: {fileID: 0}
+  crashSound: {fileID: 0}
 --- !u!1 &5210048797711408114
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,7 +673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d914417764ec94e4e88c4406e17a69c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f05bb7f7ca9d25449e578d92e4497e1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
