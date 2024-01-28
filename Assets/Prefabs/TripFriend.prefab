@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 4317033406050117294}
   - component: {fileID: 2285741924446478501}
   - component: {fileID: 7092651822141412757}
+  - component: {fileID: 1381982210327958604}
   m_Layer: 0
   m_Name: TripFriend
   m_TagString: Untagged
@@ -110,6 +111,19 @@ MonoBehaviour:
   _insanitySlider: {fileID: 0}
   _animator: {fileID: 5453471727386966389}
   _failureInsanityTreshold: 10
+  _timeBetweenVoiceLines: 15
+  _audioSource: {fileID: 1381982210327958604}
+  _goodFlavorClips:
+  - {fileID: 8300000, guid: eda429d288c91604984af5a282d4c37e, type: 3}
+  - {fileID: 8300000, guid: 8c554e4bcd4d6d448a8bbd90a9279277, type: 3}
+  - {fileID: 8300000, guid: 6d04f563422f0854780627948f8c0fd0, type: 3}
+  - {fileID: 8300000, guid: 4e0a7976444289d4ea61ffd631cc2040, type: 3}
+  - {fileID: 8300000, guid: c06c3b4285d858b49bc65182ddb88ada, type: 3}
+  - {fileID: 8300000, guid: 09daec041bbb4a244ad2780b3c4a5b76, type: 3}
+  _BadFlavorClips:
+  - {fileID: 8300000, guid: 1ef04fabfad38134fa84c00bb3801282, type: 3}
+  - {fileID: 8300000, guid: e05ca8c8b3cb481489881f912f92742b, type: 3}
+  - {fileID: 8300000, guid: 6f82a6958a49e6449923a5e13c41b4da, type: 3}
   gameOverMenu: {fileID: 0}
 --- !u!114 &2285741924446478501
 MonoBehaviour:
@@ -123,8 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8882e8e755decd54696fbaf70f721409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eatCollider: {fileID: 3243630876782379733}
-  _hungerClips: []
+  _hungerClips:
+  - {fileID: 8300000, guid: 07bc26bc991707440be94015687bd861, type: 3}
   _hungerGraceTime: 10
   _hungerGrowRatePerSecond: 0.007
 --- !u!54 &7092651822141412757
@@ -154,6 +168,102 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &1381982210327958604
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5052022751637576560}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.773
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 175
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: -0.24
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5848499571988781400
 GameObject:
   m_ObjectHideFlags: 0

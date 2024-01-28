@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Hunger : MonoBehaviour, IModifyInsanity
 {
-    [SerializeField] private Collider _eatCollider = null;
     [SerializeField] private List<AudioClip> _hungerClips;
 
     private float _currentHungerInsanityMod = 0;
@@ -39,6 +38,10 @@ public class Hunger : MonoBehaviour, IModifyInsanity
 
     public AudioClip GetAudioClip()
     {
+        if (_hungerClips.Count == 0)
+        {
+            return null;
+        }
         return _hungerClips[Random.Range(0, _hungerClips.Count)];
     }
 

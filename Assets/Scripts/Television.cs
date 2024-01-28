@@ -21,6 +21,7 @@ public class Television : MonoBehaviour, IModifyInsanity
 
 
     [SerializeField] private VideoPlayer _vidPlayer;
+    [SerializeField] private AudioSource _vidAudioSource;
 
     [SerializeField] private RotationButton _channelRotation;
     [SerializeField] private float _angleMargin = 20f;
@@ -28,13 +29,11 @@ public class Television : MonoBehaviour, IModifyInsanity
     [SerializeField] private float _timeBetweenSwitchEvents = 10f;
     private float _timer = 0f;
 
-
     [SerializeField] private List<VideoClip> _goodChannels = new List<VideoClip>();
     [SerializeField] private List<VideoClip> _badChannels = new List<VideoClip>();
     [SerializeField] private VideoClip _staticClip;
     [SerializeField] private List<AudioClip> _tripFriendPositiveAudioClips = new List<AudioClip>();
     [SerializeField] private List<AudioClip> _tripFriendNegativeAudioClips = new List<AudioClip>();
-    [SerializeField] private List<AudioClip> _tripFriendOffAudioClips = new List<AudioClip>();
 
     [Space(5)]
     [SerializeField, Range(-1f, 0f)] private float _goodChannelInsanityModifier = -0.5f;
@@ -47,6 +46,9 @@ public class Television : MonoBehaviour, IModifyInsanity
         TripFriend.Instance.RegisterInsanityModifier(this);
         GenerateNewChannelAngles();
         SetTvOn(false);
+
+        _vidPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
+        _vidPlayer.SetTargetAudioSource(0, _vidAudioSource);
     }
 
     private void OnDestroy()
@@ -139,7 +141,6 @@ public class Television : MonoBehaviour, IModifyInsanity
     public void ToggleTv()
     {
         SetTvOn(!_isOn);
-        Debug.Log($"switch! {_isOn}");
     }
 
     public VideoClip GetRandomGoodChannel()
@@ -149,6 +150,10 @@ public class Television : MonoBehaviour, IModifyInsanity
 
     public AudioClip GetRandomGoodVoiceClip()
     {
+        if (_tripFriendPositiveAudioClips.Count == 0)
+        {
+            return null;
+        }
         return _tripFriendPositiveAudioClips[Random.Range(0, _tripFriendPositiveAudioClips.Count)];
     }
 
@@ -159,12 +164,11 @@ public class Television : MonoBehaviour, IModifyInsanity
 
     public AudioClip GetRandomBadVoiceClip()
     {
+        if (_tripFriendNegativeAudioClips.Count == 0)
+        {
+            return null;
+        }
         return _tripFriendNegativeAudioClips[Random.Range(0, _tripFriendNegativeAudioClips.Count)];
-    }
-
-    public AudioClip GetRandomOffVoiceClip()
-    {
-        return _tripFriendOffAudioClips[Random.Range(0, _tripFriendOffAudioClips.Count)];
     }
 
     public AudioClip GetAudioClip()
@@ -179,6 +183,7 @@ public class Television : MonoBehaviour, IModifyInsanity
                     _currentInsanityModifier = _goodChannelInsanityModifier;
                     break;
                 case EChannelType.Bad:
+                case EChannelType.Static:
                     audioclip = GetRandomBadVoiceClip();
                     _currentInsanityModifier = _badChannelInsanityModifier;
                     break;
@@ -188,7 +193,7 @@ public class Television : MonoBehaviour, IModifyInsanity
         }
         else
         {
-            audioclip = GetRandomOffVoiceClip();
+            audioclip = null;
         }
         return audioclip;
     }

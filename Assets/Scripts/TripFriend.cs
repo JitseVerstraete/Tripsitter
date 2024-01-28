@@ -35,7 +35,6 @@ public class TripFriend : MonoBehaviour
     [SerializeField] private List<AudioClip> _BadFlavorClips = new List<AudioClip>();
     private float _voiceLineTimer = 0f;
 
-
     private HashSet<IModifyInsanity> _insanityModifiers = new HashSet<IModifyInsanity>();
 
     [Tooltip("Gameover menu to trigger when the timer elapsed.")]
@@ -80,16 +79,16 @@ public class TripFriend : MonoBehaviour
             _voiceLineTimer = 0f;
             PlayVoiceLine();
         }
-
     }
 
     private void PlayVoiceLine()
     {
         AudioClip newClip = null;
-        bool flavorVoice = (UnityEngine.Random.Range(0, 10) % 2 == 0);
+        bool flavorVoice = (UnityEngine.Random.Range(0f, 1f) > (_currentInsanity / _failureInsanityTreshold) + 0.1f);
         if (flavorVoice)
         {
             newClip = GetFlavorAudioClip();
+            Debug.Log("getting flavor clip");
         }
         else
         {
@@ -104,17 +103,20 @@ public class TripFriend : MonoBehaviour
                 }
             }
 
-            if (highestModifierVal == float.MinValue)
+            if (highestMod == null || highestMod.GetAudioClip() == null)
             {
                 newClip = GetFlavorAudioClip();
+                Debug.Log("tried to get relevant audio, but was null, getting flavor");
             }
             else
             {
                 newClip = highestMod.GetAudioClip();
+                Debug.Log("getting gameplay audio clip");
             }
         }
 
         _audioSource.clip = newClip;
+        _audioSource.Play();
     }
 
     private AudioClip GetFlavorAudioClip()

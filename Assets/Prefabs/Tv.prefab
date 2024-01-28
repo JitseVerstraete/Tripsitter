@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2262319057508399709}
   - component: {fileID: 4544562888670490634}
   - component: {fileID: 1997113676055706696}
+  - component: {fileID: 7215952882247994645}
   m_Layer: 0
   m_Name: Tv
   m_TagString: Untagged
@@ -47,17 +48,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vidPlayer: {fileID: 1997113676055706696}
+  _vidAudioSource: {fileID: 7215952882247994645}
   _channelRotation: {fileID: 4397670394599536131}
   _angleMargin: 30
-  _timeBetweenSwitchEvents: 5
+  _timeBetweenSwitchEvents: 15
   _goodChannels:
   - {fileID: 32900000, guid: 7a18b55ba74ef6649be47936dba4ddf5, type: 3}
   _badChannels:
   - {fileID: 32900000, guid: 1acea5d10ac928148afba7b00829b59b, type: 3}
   _staticClip: {fileID: 32900000, guid: 64768d0edbbfc9449a1ada6627038017, type: 3}
-  _tripFriendPositiveAudioClips: []
-  _tripFriendNegativeAudioClips: []
-  _tripFriendOffAudioClips: []
+  _tripFriendPositiveAudioClips:
+  - {fileID: 8300000, guid: 7749f4c8a33e6b340bc1ddc39cab37f5, type: 3}
+  _tripFriendNegativeAudioClips:
+  - {fileID: 8300000, guid: 3d52d12e3cf8ae1409e3a1e4b3dacde2, type: 3}
+  - {fileID: 8300000, guid: 402c81b903e7c6e4bb7445a479c06418, type: 3}
   _goodChannelInsanityModifier: -0.5
   _badChannelInsanityModifier: 0.4
   _staticChannelInanityModifier: 0.15
@@ -82,9 +86,9 @@ VideoPlayer:
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 1
   m_TargetAudioSources:
-  - {fileID: 0}
+  - {fileID: 7215952882247994645}
   m_DirectAudioVolumes:
   - 1
   m_Url: 
@@ -93,10 +97,106 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!82 &7215952882247994645
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748495944734674678}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &3600881551884388876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -351,6 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshRen: {fileID: 7672858083447361214}
+  _hoverHighlightEnabled: 1
 --- !u!4 &5824186770564463424 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2221596555698917044, guid: 96513a94662d6054b8ac6fa65e9a8826,
@@ -404,6 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshRen: {fileID: 8853689389156967545}
+  _hoverHighlightEnabled: 1
 --- !u!114 &4960160850224330061
 MonoBehaviour:
   m_ObjectHideFlags: 0

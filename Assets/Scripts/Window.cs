@@ -118,11 +118,19 @@ public class Window : MonoBehaviour, IModifyInsanity
 
     public AudioClip GetRandomOpenVoiceClip()
     {
+        if (_tripFriendOpenAudioClips.Count == 0)
+        {
+            return null;
+        }
         return _tripFriendOpenAudioClips[Random.Range(0, _tripFriendOpenAudioClips.Count)];
     }
 
     public AudioClip GetRandomClosedVoiceClip()
     {
+        if (_tripFriendClosedAudioClips.Count == 0)
+        {
+            return null;
+        }
         return _tripFriendClosedAudioClips[Random.Range(0, _tripFriendClosedAudioClips.Count)];
     }
 

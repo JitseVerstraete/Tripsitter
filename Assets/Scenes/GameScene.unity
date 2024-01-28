@@ -139,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 472633168174291222, guid: 91fb2b1a407cd464b8f68d2a4865171d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8222175613492056881, guid: 91fb2b1a407cd464b8f68d2a4865171d,
         type: 3}
@@ -848,7 +848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1494510594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,18 +1026,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2300044370682026012}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1779065503 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5836982036860608581, guid: 6276e56c1fc10b0458c2363abf60a66c,
-    type: 3}
-  m_PrefabInstance: {fileID: 2300044370682026012}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1945678574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1125,7 +1113,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _insanitySlider
       value: 
-      objectReference: {fileID: 1779065503}
+      objectReference: {fileID: 0}
     - target: {fileID: 5052022751637576560, guid: 3fd6e10172bd1984d90c30e1619c1632,
         type: 3}
       propertyPath: m_Name
@@ -1456,7 +1444,7 @@ PrefabInstance:
     - target: {fileID: 5122711758348897837, guid: 6276e56c1fc10b0458c2363abf60a66c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5790220315756911344, guid: 6276e56c1fc10b0458c2363abf60a66c,
         type: 3}

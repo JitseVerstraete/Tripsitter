@@ -120,7 +120,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -501,6 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshRen: {fileID: 7061027341480038476}
+  _hoverHighlightEnabled: 1
 --- !u!1 &1655283620391268289 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 44b2932a878596e4a872923a7787aa17,
@@ -603,6 +604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshRen: {fileID: 5466305112332037009}
+  _hoverHighlightEnabled: 1
 --- !u!114 &7963877683989889201
 MonoBehaviour:
   m_ObjectHideFlags: 0
