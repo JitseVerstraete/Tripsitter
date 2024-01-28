@@ -10,11 +10,15 @@ public class GameOverMenu : MonoBehaviour
     [SerializeField] private AudioClip sirens;
     [SerializeField] private AudioClip crashSound;
 
+    [Tooltip("tv reference so we can turn it off")]
+    [SerializeField] private GameObject tv;
+
     private void Start()
     {
+        tv.SetActive(false); // turn off tv
+
         audioSource.PlayOneShot(crashSound);
         Invoke("PlaySirenSounds", crashSound.length -1); // The -1 is a hack because I dont want to edit the audio file right now
-        
     }
 
     private void PlaySirenSounds()
