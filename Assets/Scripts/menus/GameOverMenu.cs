@@ -15,7 +15,8 @@ public class GameOverMenu : MonoBehaviour
 
     private void Start()
     {
-        if(tv != null) 
+        Time.timeScale = 0;
+        if (tv != null) 
         {
             tv.SetActive(false); // turn off tv
         }
@@ -43,6 +44,7 @@ public class GameOverMenu : MonoBehaviour
         {
             audioSource.Stop();
         }
+        Time.timeScale = 1;
     }
     public void ExitGame()
     {
