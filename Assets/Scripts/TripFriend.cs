@@ -1,12 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using TMPro;
+using System;
+
+public enum EInsanityModifierType
+{
+    TV,
+    Window,
+    Hunger
+}
+
 
 public interface IModifyInsanity
 {
     public abstract float GetInsanityModifier();
     public abstract AudioClip GetAudioClip();
+    public abstract EInsanityModifierType GetModifierType();
 }
 
 
@@ -19,6 +28,13 @@ public class TripFriend : MonoBehaviour
     [SerializeField] private Animator _animator = null;
     private float _currentInsanity;
     [SerializeField] private float _failureInsanityTreshold = 10f;
+
+    [SerializeField] private float _timeBetweenVoiceLines = 10f;
+    [SerializeField] private AudioSource _audioSource = null;
+    [SerializeField] private List<AudioClip> _goodFlavorClips = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> _BadFlavorClips = new List<AudioClip>();
+    private float _voiceLineTimer = 0f;
+
 
     private HashSet<IModifyInsanity> _insanityModifiers = new HashSet<IModifyInsanity>();
 
@@ -58,6 +74,59 @@ public class TripFriend : MonoBehaviour
             GameOver();
         }
 
+        _voiceLineTimer += Time.deltaTime;
+        if (_voiceLineTimer >= _timeBetweenVoiceLines)
+        {
+            _voiceLineTimer = 0f;
+            PlayVoiceLine();
+        }
+
+    }
+
+    private void PlayVoiceLine()
+    {
+        AudioClip newClip = null;
+        bool flavorVoice = (UnityEngine.Random.Range(0, 10) % 2 == 0);
+        if (flavorVoice)
+        {
+            newClip = GetFlavorAudioClip();
+        }
+        else
+        {
+            IModifyInsanity highestMod = null;
+            float highestModifierVal = float.MinValue;
+            foreach (IModifyInsanity insanityMod in _insanityModifiers)
+            {
+                if (insanityMod.GetInsanityModifier() > highestModifierVal)
+                {
+                    highestMod = insanityMod;
+                    highestModifierVal = insanityMod.GetInsanityModifier();
+                }
+            }
+
+            if (highestModifierVal == float.MinValue)
+            {
+                newClip = GetFlavorAudioClip();
+            }
+            else
+            {
+                newClip = highestMod.GetAudioClip();
+            }
+        }
+
+        _audioSource.clip = newClip;
+    }
+
+    private AudioClip GetFlavorAudioClip()
+    {
+        if (_currentInsanity / _failureInsanityTreshold > 0.6f)
+        {
+            return _BadFlavorClips[UnityEngine.Random.Range(0, _BadFlavorClips.Count)];
+        }
+        else
+        {
+            return _goodFlavorClips[UnityEngine.Random.Range(0, _goodFlavorClips.Count)];
+        }
     }
 
     private void GameOver()

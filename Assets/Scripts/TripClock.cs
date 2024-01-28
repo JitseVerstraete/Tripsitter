@@ -23,8 +23,8 @@ public class TripClock : MonoBehaviour
     {
         if (tickingTime)
         {
-            tripTime -= Time.deltaTime;
-            if (tripTime <= 0)
+            timeLeft -= Time.deltaTime;
+            if (timeLeft <= 0)
             {
                 tickingTime = false;
                 TimeElapsed();
@@ -35,6 +35,7 @@ public class TripClock : MonoBehaviour
     public void TimeElapsed()
     {
         successMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public float GetTimeLeft()

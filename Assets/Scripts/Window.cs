@@ -133,4 +133,9 @@ public class Window : MonoBehaviour, IModifyInsanity
         yield return new WaitForSeconds(increaseTimerInSeconds);
         _shouldIncreaseModifier = true;
     }
+
+    public EInsanityModifierType GetModifierType()
+    {
+        return EInsanityModifierType.Window;
+    }
 }

@@ -41,4 +41,9 @@ public class Hunger : MonoBehaviour, IModifyInsanity
     {
         return _hungerClips[Random.Range(0, _hungerClips.Count)];
     }
+
+    public EInsanityModifierType GetModifierType()
+    {
+        return EInsanityModifierType.Hunger;
+    }
 }

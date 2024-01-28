@@ -224,4 +224,9 @@ public class Television : MonoBehaviour, IModifyInsanity
             _goodChannelAngle += 360f;
         }
     }
+
+    public EInsanityModifierType GetModifierType()
+    {
+        return EInsanityModifierType.TV;
+    }
 }
