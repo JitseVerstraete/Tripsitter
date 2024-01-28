@@ -57,6 +57,7 @@ MonoBehaviour:
   - {fileID: 32900000, guid: d562a7c7c7f8c5740b08d88da1e7fd19, type: 3}
   _badChannels:
   - {fileID: 32900000, guid: 1acea5d10ac928148afba7b00829b59b, type: 3}
+  - {fileID: 32900000, guid: cf86ba5f6d86b9648962bee376a266b9, type: 3}
   _staticClip: {fileID: 32900000, guid: 64768d0edbbfc9449a1ada6627038017, type: 3}
   _tripFriendPositiveAudioClips:
   - {fileID: 8300000, guid: 7749f4c8a33e6b340bc1ddc39cab37f5, type: 3}
